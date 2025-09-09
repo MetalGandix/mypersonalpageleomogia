@@ -1,24 +1,46 @@
 import React from 'react';
 
 export default function Lauree({ lang }) {
+  const degrees = lang === 'it'
+    ? [
+        {
+          title: 'Ph.D. in LESDIT',
+          content: <>Learning Sciences and Digital Technologies<br />Università di Modena e Reggio Emilia (dal 2023)</>
+        },
+        {
+          title: 'Laurea Magistrale in Computer Science',
+          content: <>Università di Camerino (UNICAM), 2023<br /><span style={{color:'#000000ff'}}>Voto: 106/110</span></>
+        },
+        {
+          title: 'Laurea Triennale in Informatica',
+          content: <>Università di Camerino (UNICAM)</>
+        }
+      ]
+    : [
+        {
+          title: 'Ph.D. in LESDIT',
+          content: <>Learning Sciences and Digital Technologies<br />University of Modena and Reggio Emilia (since 2023)</>
+        },
+        {
+          title: 'MSc in Computer Science',
+          content: <>University of Camerino (UNICAM), 2023<br /><span style={{color:'#4f8cff'}}>Grade: 106/110</span></>
+        },
+        {
+          title: 'BSc in Computer Science',
+          content: <>University of Camerino (UNICAM)</>
+        }
+      ];
   return (
     <>
-      <h2>{lang === 'it' ? 'Lauree' : 'Degrees'}</h2>
-      <ul>
-        {lang === 'it' ? (
-          <>
-            <li>Ph.D. in LESDIT (Learning Sciences and Digital Technologies) – Università di Modena e Reggio Emilia (dal 2023)</li>
-            <li>Laurea Magistrale in Computer Science – Università di Camerino (UNICAM), 2023, Voto: 106/110</li>
-            <li>Laurea Triennale in Informatica – Università di Camerino (UNICAM)</li>
-          </>
-        ) : (
-          <>
-            <li>Ph.D. in LESDIT (Learning Sciences and Digital Technologies) – University of Modena and Reggio Emilia (since 2023)</li>
-            <li>MSc in Computer Science – University of Camerino (UNICAM), 2023, Grade: 106/110</li>
-            <li>BSc in Computer Science – University of Camerino (UNICAM)</li>
-          </>
-        )}
-      </ul>
+      <h2 style={{textAlign:'center'}}>{lang === 'it' ? 'Lauree' : 'Degrees'}</h2>
+      <div className="card-container">
+        {degrees.map((deg, idx) => (
+          <div className="card" key={idx}>
+            <div className="card__title">{deg.title}</div>
+            <div className="card__content">{deg.content}</div>
+          </div>
+        ))}
+      </div>
     </>
   );
 }

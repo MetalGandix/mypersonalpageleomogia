@@ -4,7 +4,7 @@ export default function Pubblicazioni({ lang }) {
   const pubs = lang === 'it'
     ? [
         {
-          title: 'Isyde 2024',
+          title: 'Abstract Isyde 2024',
           content: <>
             Abstract pubblicati: (ID: 111, pag 27), (ID: 125, pag 65)<br />
             <a href="https://www.isyde.org/wp-content/uploads/2024/07/Book_OF_Abstracts_Isyde_2024.pdf" target="_blank" rel="noopener noreferrer" style={{color:'#4f8cff', fontWeight:'500'}}>Book of Abstract Link</a>
@@ -21,9 +21,9 @@ export default function Pubblicazioni({ lang }) {
       ]
     : [
         {
-          title: 'Isyde',
+          title: 'Abstract Isyde 2024',
           content: <>
-            (ID: 111, p. 27), (ID: 125, p. 65)<br />
+            Abstract published: (ID: 111, p. 27), (ID: 125, p. 65)<br />
             <a href="https://www.isyde.org/wp-content/uploads/2024/07/Book_OF_Abstracts_Isyde_2024.pdf" target="_blank" rel="noopener noreferrer" style={{color:'#4f8cff', fontWeight:'500'}}>Book of Abstract Link</a>
           </>
         },

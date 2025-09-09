@@ -22,7 +22,7 @@ export default function ChiSono({ lang = 'it' }) {
     <div>
       <div className="chi-title-center">
         <span className="chi-title-text">
-          <span role="img" aria-label="pc">🔎</span> Ph.D. Lesdit researcher Leonardo Mogianesi <span role="img" aria-label="pc">💻</span>
+          <span role="img" aria-label="pc">🔎</span> Ph.D. LESDIT student Leonardo Mogianesi <span role="img" aria-label="pc">💻</span>
         </span>
       </div>
       <div className="chi-slider-section chi-desktop-flex">

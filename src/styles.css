@@ -715,3 +715,39 @@ p {
     margin-top: 1rem;
   }
 }
+
+.passione-info-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3rem;
+}
+.passione-info-bio {
+  flex: 1 1 350px;
+  min-width: 280px;
+  max-width: 500px;
+}
+.passione-info-slider {
+  flex: 1 1 400px;
+  min-width: 280px;
+  max-width: 420px;
+}
+@media (max-width: 900px) {
+  .passione-info-flex {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+  .passione-info-bio, .passione-info-slider {
+    max-width: 98vw;
+    min-width: 0;
+    width: 100%;
+  }
+  .passione-info-slider {
+    order: 1;
+  }
+  .passione-info-bio {
+    order: 2;
+  }
+}

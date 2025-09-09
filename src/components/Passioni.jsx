@@ -87,56 +87,60 @@ export default function Passioni({ lang }) {
         ))}
       </ul>
       {selected !== null && (
-        <div className="passione-info-card">
-          <h3>{lang === 'it' ? passioni[selected].nome : passioni[selected].nomeEn}</h3>
-          <div style={{marginBottom: '1.2rem'}}>{lang === 'it' ? passioni[selected].info : passioni[selected].infoEn}</div>
-          {passioni[selected].immagini && (
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                width: '100%',
-                marginBottom: '1.2rem'
-              }}
-            >
+        <div className="passione-info-flex">
+          <div className="passione-info-card passione-info-bio">
+            <h3>{lang === 'it' ? passioni[selected].nome : passioni[selected].nomeEn}</h3>
+            <div style={{marginBottom: '1.2rem'}}>{lang === 'it' ? passioni[selected].info : passioni[selected].infoEn}</div>
+            <button className="close-info" onClick={() => setSelected(null)}>{lang === 'it' ? 'Chiudi' : 'Close'}</button>
+          </div>
+          <div className="passione-info-slider">
+            {passioni[selected].immagini && (
               <div
-                className="chi-slider-section"
                 style={{
-                  width: passioni[selected].nome === 'Fotografia' ? '100%' : undefined,
-                  maxWidth: passioni[selected].nome === 'Fotografia' ? '700px' : '98vw',
-                  margin: '0 auto'
+                  display: 'flex',
+                  justifyContent: 'center',
+                  width: '100%',
+                  marginBottom: '1.2rem'
                 }}
               >
-                <div className="slider-radio-group">
-                  {passioni[selected].immagini.map((img, idx) => (
-                    <React.Fragment key={img}>
-                      <input
-                        className={`slider-radio radio${idx}`}
-                        type="radio"
-                        id={`passion-slide-${idx}`}
-                        name="passion-slider"
-                        checked={carouselIdx === idx}
-                        onChange={() => setCarouselIdx(idx)}
-                      />
-                      <label htmlFor={`passion-slide-${idx}`} style={{backgroundImage: `url(${img})`}}></label>
-                    </React.Fragment>
-                  ))}
+                <div
+                  className="chi-slider-section"
+                  style={{
+                    width: passioni[selected].nome === 'Fotografia' ? '100%' : undefined,
+                    maxWidth: passioni[selected].nome === 'Fotografia' ? '700px' : '98vw',
+                    margin: '0 auto'
+                  }}
+                >
+                  <div className="slider-radio-group">
+                    {passioni[selected].immagini.map((img, idx) => (
+                      <React.Fragment key={img}>
+                        <input
+                          className={`slider-radio radio${idx}`}
+                          type="radio"
+                          id={`passion-slide-${idx}`}
+                          name="passion-slider"
+                          checked={carouselIdx === idx}
+                          onChange={() => setCarouselIdx(idx)}
+                        />
+                        <label htmlFor={`passion-slide-${idx}`} style={{backgroundImage: `url(${img})`}}></label>
+                      </React.Fragment>
+                    ))}
+                  </div>
+                  <ul className="slider-list" style={{width: '400px', height: '400px', margin: '0 auto', display: 'block', maxWidth: '98vw'}}>
+                    {passioni[selected].immagini.map((img, idx) => (
+                      <li
+                        key={img}
+                        className={carouselIdx === idx ? 'active' : ''}
+                        style={{backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', borderRadius: '32px', boxShadow: '0 8px 25px 0 rgba(16,39,112,.1)', display: 'flex', alignItems: 'flex-end', justifyContent: 'flex-end'}}
+                      >
+                        <span className="passion-label">{lang === 'it' ? passioni[selected].nome : passioni[selected].nomeEn}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="slider-list" style={{width: '400px', height: '400px', margin: '0 auto', display: 'block', maxWidth: '98vw'}}>
-                  {passioni[selected].immagini.map((img, idx) => (
-                    <li
-                      key={img}
-                      className={carouselIdx === idx ? 'active' : ''}
-                      style={{backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', borderRadius: '32px', boxShadow: '0 8px 25px 0 rgba(16,39,112,.1)', display: 'flex', alignItems: 'flex-end', justifyContent: 'flex-end'}}
-                    >
-                      <span className="passion-label">{lang === 'it' ? passioni[selected].nome : passioni[selected].nomeEn}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
-            </div>
-          )}
-          <button className="close-info" onClick={() => setSelected(null)}>{lang === 'it' ? 'Chiudi' : 'Close'}</button>
+            )}
+          </div>
         </div>
       )}
     </>

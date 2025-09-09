@@ -20,6 +20,11 @@ export default function ChiSono() {
 
   return (
     <div className="chi-slider-section">
+      <div style={{textAlign: 'center', marginBottom: '1.2rem'}}>
+        <span style={{fontSize: '2rem', fontWeight: 700, fontFamily: 'Poppins, Inter, Arial, sans-serif', color: '#222', letterSpacing: '1px'}}>
+          <span role="img" aria-label="pc">💻</span> Ph.D. Lesdit researcher Leonardo Mogianesi <span role="img" aria-label="pc">💻</span>
+        </span>
+      </div>
       <div className="slider-radio-group">
         {immagini.map((img, idx) => (
           <React.Fragment key={img.src}>

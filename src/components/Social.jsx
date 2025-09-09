@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Social() {
+export default function Social({ lang }) {
   return (
     <>
-      <h2>Social</h2>
+      <h2>{lang === 'it' ? 'Social' : 'Social'}</h2>
       <ul className="social-list">
         <li>
           <a href="https://www.instagram.com/mogiardoo/" target="_blank" rel="noopener noreferrer">
@@ -50,9 +50,9 @@ export default function Social() {
         <li>
           <a href="https://www.ssbwiki.com/Smasher:GANDIX" target="_blank" rel="noopener noreferrer">
             <span style={{verticalAlign: 'middle', marginRight: '8px', display: 'inline-flex', alignItems: 'center'}}>
-              <img src="/immagini/Smash_ball.png" alt="Smash Ball" style={{width: '22px', height: '22px', marginLeft: '2px'}} />
+              <img src="/immagini/Smash_Ball.png" alt="Smash Ball" style={{width: '22px', height: '22px', marginLeft: '2px'}} />
             </span>
-            Smasher Profile
+            {lang === 'it' ? 'Profilo Smasher' : 'Smasher Profile'}
           </a>
         </li>
       </ul>

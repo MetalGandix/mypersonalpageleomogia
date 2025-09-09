@@ -57,7 +57,7 @@ const passioni = [
 ];
 
 export default function Passioni({ lang }) {
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState(0);
   const [carouselIdx, setCarouselIdx] = useState(0);
 
   const handleSelect = idx => {

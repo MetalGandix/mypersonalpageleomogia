@@ -21,7 +21,7 @@ export default function ChiSono({ lang = 'it' }) {
   return (
     <div>
       <div className="chi-title-center">
-        <span style={{fontSize: '2rem', fontWeight: 700, fontFamily: 'Poppins, Inter, Arial, sans-serif', color: '#222', letterSpacing: '1px'}}>
+        <span className="chi-title-text">
           <span role="img" aria-label="pc">🔎</span> Ph.D. Lesdit researcher Leonardo Mogianesi <span role="img" aria-label="pc">💻</span>
         </span>
       </div>
@@ -77,6 +77,9 @@ export default function ChiSono({ lang = 'it' }) {
               </li>
             ))}
           </ul>
+          <div style={{textAlign: 'center', marginTop: '1.2rem', fontSize: '1.1rem', color: '#2a3cff', fontWeight: 600}}>
+            leonardo.mogianesi@unicam.it
+          </div>
         </div>
       </div>
     </div>

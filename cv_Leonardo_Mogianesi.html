@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curriculum Vitae - Leonardo Mogianesi</title>
+    <!-- Stile Material-Like -->
+    <style>
+        /* Palette di colori ispirata al Material Design */
+        :root {
+            --primary-color: #3f51b5;
+            /* Indigo */
+            --primary-dark: #303f9f;
+            --secondary-color: #f50057;
+            /* Pink A400 */
+            --text-color: #333;
+            --background-color: #f5f5f5;
+            --card-background: #ffffff;
+        }
+
+        /* Reset di base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Contenitore principale */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: var(--card-background);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header in stile "app-bar" */
+        .app-bar {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 16px;
+            margin-bottom: 20px;
+            border-radius: 8px 8px 0 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .app-bar h1 {
+            font-size: 1.6rem;
+            font-weight: 400;
+        }
+
+        /* Sezione del profilo utente */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-info h2 {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .header-info p {
+            margin-bottom: 4px;
+        }
+
+        /* Sezioni del curriculum */
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h3 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+        }
+
+        /* Formattazione esperienza lavorativa */
+        .job-entry {
+            line-height: normal;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .job-dates {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .job-title {
+            color: var(--primary-color);
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .job-description {
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .job-location {
+            margin-left: 10px;
+        }
+
+        .job-location p {
+            margin: 2px 0;
+        }
+
+        /* Formattazione Istruzione e Formazione */
+        .edu-entry {
+            line-height: normal;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .edu-dates {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .edu-title {
+            color: var(--primary-color);
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .edu-description {
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .edu-institution {
+            margin-left: 10px;
+            margin-bottom: 5px;
+        }
+
+        .edu-location {
+            margin-left: 10px;
+        }
+
+        .edu-location p {
+            margin: 2px 0;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+        .activity-block {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 0.95em;
+        }
+
+        .activity-block a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .activity-block a:hover {
+            text-decoration: underline;
+        }
+
+        .paper-list {
+            list-style: none;
+            padding-left: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .paper-list li {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 5px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Sezione Profilo -->
+        <div class="header">
+            <img src="1_less.jpg" alt="Foto di Leonardo Mogianesi">
+            <div class="header-info">
+                <h2>Leonardo Mogianesi</h2>
+                <p><strong>Data di nascita:</strong> 28/12/1997 | <strong>Nazionalità:</strong> Italiana</p>
+                <p><strong>Abitazione:</strong> 🏠 62100, Macerata, Italia</p>
+                <p><strong>Email:</strong> 📧 leonardo.mogianesi@unicam.it | <strong>Telefono:</strong> 📞 (+39)
+                    3663467422</p> | <strong>Orcid:</strong> 0009-0009-6414-3602 | <strong>Profilo OpenBadge:</strong>
+                <a href="https://openbadgepassport.com/app/profile/253517" target="_blank">Profilo Leonardo
+                    Mogianesi</a>
+            </div>
+        </div>
+
+        <!-- Esperienza Lavorativa -->
+        <div class="section">
+            <h3>Esperienza Lavorativa</h3>
+
+            <div class="job-entry">
+                <div class="job-dates">01/05/2023 – 01/11/2023</div>
+                <div class="job-title">Borsa di studio</div>
+                <div class="job-description">Innovazione digitale e sviluppo di servizi online per la didattica
+                    universitaria presso Unicam</div>
+                <div class="job-location">
+                    <p>Città: Camerino</p>
+                    <p>Paese: Italia</p>
+                </div>
+            </div>
+
+
+            <div class="job-entry">
+                <div class="job-dates">04/10/2022 – 23/12/2022</div>
+                <div class="job-title">Docente di Informatica</div>
+                <div class="job-description">Docente di Informatica presso ITIS DIVINI</div>
+                <div class="job-location">
+                    <p>Città: San Severino Marche</p>
+                    <p>Paese: Italia</p>
+                </div>
+            </div>
+
+
+            <div class="job-entry">
+                <div class="job-dates">26/04/2022 – 16/06/2022</div>
+                <div class="job-title">Docente di Informatica</div>
+                <div class="job-description">Docente di Informatica presso IIS Garibaldi</div>
+                <div class="job-location">
+                    <p>Città: Macerata</p>
+                    <p>Paese: Italia</p>
+                </div>
+            </div>
+
+            <div class="job-entry">
+                <div class="job-dates">15/03/2021 – 15/06/2021</div>
+                <div class="job-title">Application Developer</div>
+                <div class="job-description">Application Developer presso DevQ S.R.L. (Front-end con Angular)</div>
+                <div class="job-location">
+                    <p>Città: Macerata</p>
+                    <p>Paese: Italia</p>
+                </div>
+            </div>
+
+            <div class="job-entry">
+                <div class="job-dates">2019 – 2020</div>
+                <div class="job-title">Web Developer</div>
+                <div class="job-description">Web Developer presso Task S.R.L.</div>
+                <div class="job-location">
+                    <p>Città: Macerata</p>
+                    <p>Paese: Italia</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Istruzione e Formazione -->
+        <div class="section">
+            <h3>Istruzione e Formazione</h3>
+
+            <div class="edu-entry">
+                <div class="edu-dates">01/11/2023 – Attuale</div>
+                <div class="edu-title">Dottorato di ricerca in LESDIT</div>
+                <div class="edu-description">(Learning Sciences and Digital Technology)</div>
+                <div class="edu-institution">Unimore - Università degli studi di Modena e Reggio Emilia</div>
+                <div class="edu-location">
+                    <p>Città: Modena</p>
+                    <p>Paese: Italia</p>
+                    <p>Sito: <a href="https://learning.phdlesdit.eu/" target="_blank">https://learning.phdlesdit.eu/</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="edu-entry">
+                <div class="edu-dates">30/10/2020 – 30/01/2023</div>
+                <div class="edu-title">Laurea Magistrale in Computer Science, Unicam (Voto: 106)</div>
+                <div class="edu-description">Tesi: A management software for an innovative blockchain-based laundry
+                </div>
+                <div class="edu-institution">Unicam - <a href="https://www.unicam.it/"
+                        target="_blank">https://www.unicam.it/</a></div>
+                <div class="edu-location">
+                    <p>Città: Camerino</p>
+                    <p>Paese: Italia</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Attività, Pubblicazioni e Ricerca -->
+        <div class="section">
+            <h3>Attività, Pubblicazioni e Ricerca</h3>
+
+            <!-- Progetti di Ricerca -->
+            <div class="research-block">
+                <h4>Progetti di Ricerca Principali</h4>
+                <div class="job-location">
+                <p><strong>Escape Room educativa su Unreal Engine</strong><br>
+                    Sviluppo di un serious game con l’uso di un tutor AI per risolvere puzzle basati sulla fisica.</p>
+                <p><strong>CodeTutor</strong><br>
+                    Sistema di tutoraggio per l’apprendimento della programmazione, con supporto all’analisi automatica
+                    del codice.</p>
+                <p><strong>Tutor animato con sincronizzazione labiale (Lip Sync) in Unreal Engine 5</strong><br>
+                    Creazione di un tutor virtuale in grado di sincronizzare i movimenti delle labbra con l’audio.</p>
+                </div>
+            </div>
+
+            <!-- Attività Didattiche e Formative -->
+            <br>
+            <div class="teaching-block">
+                <h4>Attività Didattiche e Formative</h4>
+                <div class="job-location">
+                <p><strong>Assistenza al professore di Informatica</strong> – Preparazione di materiali didattici e
+                    supporto durante le esercitazioni presso l'Università di Camerino.</p>
+                <p><strong>Gestione Moodle e piattaforme e-learning</strong> – Manutenzione e aggiornamento dei sistemi
+                    di e-learning dell’Università di Camerino.</p>
+                <p><strong>Supporto durante gli esami</strong> – Affiancamento ai professori per facilitare il processo
+                    di valutazione.</p>
+                <p><strong>Partecipazione a lezioni LESDIT</strong> – Approfondimento su Learning Sciences e Digital
+                    Technologies.</p>
+                </div>
+            </div>
+<br>
+            <!-- Conferenze e Seminari -->
+            <div class="conference-block">
+                <h4>Conferenze e Seminari</h4>
+                <div class="job-location">
+                    <p><strong>Summer School LESDIT-SIREM 2024</strong><br>
+                        “Social Media Literacy: From the Individual to the Community”</p>
+                    <p><strong>Convegno ISYDE 2024</strong><br>
+                        Giugno – Presentazione di due contributi scientifici.</p>
+                </div>
+                
+            </div>
+<br>
+            <!-- Pubblicazioni -->
+            <div class="publication-block">
+                <p><strong>Abstract pubblicati:</strong></p>
+                <div class="job-location">
+                <p>Isyde (ID: 111, pag 27), (ID: 125, pag 65) –
+                    <a href="https://www.isyde.org/wp-content/uploads/2024/07/Book_OF_Abstracts_Isyde_2024.pdf"
+                        target="_blank">Book of Abstract Link</a>
+                </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Competenze Linguistiche -->
+        <div class="section">
+            <h3>Competenze Linguistiche</h3>
+            <p><strong>Lingua madre:</strong> Italiano</p>
+            <p><strong>Inglese:</strong> B2 (Ascolto, Lettura, Scrittura, Produzione Orale, Interazione Orale)</p>
+        </div>
+
+        <div class="section">
+            <h3>Competenze Digitali</h3>
+            <div class="skills">
+                <span class="skill">Microsoft Office</span>
+                <span class="skill">HTML, CSS, PHP, jQuery, JavaScript</span>
+                <span class="skill">Angular 11+</span>
+                <span class="skill">Java, OOP</span>
+                <span class="skill">Web Development, REST</span>
+                <span class="skill">XAMPP, WAMPP, Apache, Tomcat</span>
+                <span class="skill">Adobe Lightroom, Photoshop</span>
+                <span class="skill">Blockchain</span>
+                <span class="skill">SQL, MySQL, MongoDB</span>
+                <span class="skill">Metahuman, Unreal Engine 5</span>
+                <span class="skill">Machine Learning</span>
+                <span class="skill">Moodle, Joomla</span>
+            </div>
+        </div>
+
+        <!-- Patente di Guida -->
+        <div class="section">
+            <h3>Patente di Guida</h3>
+            <p>B (Automobile)</p>
+        </div>
+
+    </div>
+</body>
+
+</html>

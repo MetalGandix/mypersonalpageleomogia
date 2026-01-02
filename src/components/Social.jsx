@@ -59,7 +59,7 @@ export default function Social({ lang }) {
         <li>
           <a href="https://www.ssbwiki.com/Smasher:GANDIX" target="_blank" rel="noopener noreferrer">
             <span style={{verticalAlign: 'middle', marginRight: '8px', display: 'inline-flex', alignItems: 'center'}}>
-              <img src="/immagini/Smash_Ball.png" alt="Smash Ball" style={{width: '22px', height: '22px', marginLeft: '2px'}} />
+              <img src={import.meta.env.BASE_URL + 'immagini/Smash_Ball.png'} alt="Smash Ball" style={{width: '22px', height: '22px', marginLeft: '2px'}} />
             </span>
             {lang === 'it' ? 'Profilo Smasher' : 'Smasher Profile'}
           </a>

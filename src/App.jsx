@@ -7,15 +7,12 @@ import Pubblicazioni from './components/Pubblicazioni';
 import Social from './components/Social';
 import './styles.css';
 
-// Use Vite base URL so routes and assets work when deployed to a subpath
-const basename = (import.meta.env.BASE_URL || '/').replace(/\/$/, '') || '/';
-
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [lang, setLang] = useState('it');
 
   return (
-    <Router basename={basename}>
+    <Router>
       <nav className="navbar">
         <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
           <span className={menuOpen ? 'hamburger-bar open' : 'hamburger-bar'}></span>
@@ -30,10 +27,10 @@ export default function App() {
           <NavLink to="/social" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? 'active' : ''}>{lang === 'it' ? 'Social' : 'Social'}</NavLink>
           <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
             <button type="button" onClick={() => setLang('it')} style={{background: 'none', border: 'none', cursor: 'pointer', padding: 0}}>
-              <img src={import.meta.env.BASE_URL + 'immagini/italy.png'} alt="Italiano" style={{width: '32px', height: '22px', borderRadius: '50%', boxShadow: lang === 'it' ? '0 0 8px #2a3cff' : 'none', border: lang === 'it' ? '3px solid #2a3cff' : '2px solid #eee', transition: 'border 0.2s'}} />
+              <img src="/immagini/italy.png" alt="Italiano" style={{width: '32px', height: '22px', borderRadius: '50%', boxShadow: lang === 'it' ? '0 0 8px #2a3cff' : 'none', border: lang === 'it' ? '3px solid #2a3cff' : '2px solid #eee', transition: 'border 0.2s'}} />
             </button>
             <button type="button" onClick={() => setLang('en')} style={{background: 'none', border: 'none', cursor: 'pointer', padding: 0}}>
-              <img src={import.meta.env.BASE_URL + 'immagini/england.png'} alt="English" style={{width: '32px', height: '22px', borderRadius: '50%', boxShadow: lang === 'en' ? '0 0 8px #2a3cff' : 'none', border: lang === 'en' ? '3px solid #2a3cff' : '2px solid #eee', transition: 'border 0.2s'}} />
+              <img src="/immagini/england.png" alt="English" style={{width: '32px', height: '22px', borderRadius: '50%', boxShadow: lang === 'en' ? '0 0 8px #2a3cff' : 'none', border: lang === 'en' ? '3px solid #2a3cff' : '2px solid #eee', transition: 'border 0.2s'}} />
             </button>
           </span>
         </div>

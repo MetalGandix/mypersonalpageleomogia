@@ -1,16 +1,18 @@
 import React from 'react';
 
+const base = import.meta.env.BASE_URL || '/';
+
 const immagini = [
   {
-    src: '/immagini/leo.jpg',
+    src: base + 'immagini/leo.jpg',
     label: 'Leonardo Mogianesi'
   },
   {
-    src: '/immagini/leo2.jpg',
+    src: base + 'immagini/leo2.jpg',
     label: 'Leonardo Mogianesi'
   },
   {
-    src: '/immagini/leo3.jpg',
+    src: base + 'immagini/leo3.jpg',
     label: 'Leonardo Mogianesi'
   }
 ];
@@ -43,8 +45,10 @@ export default function ChiSono({ lang = 'it' }) {
             }
           </p>
           <a
-            href="/cv_Leonardo_Mogianesi_2025.pdf"
+            href={import.meta.env.BASE_URL + 'cv_Leonardo_Mogianesi_2025.pdf'}
             className="cv-btn"
+            target="_blank"
+            rel="noopener noreferrer"
             download
           >
             {lang === 'it' ? 'Scarica CV' : 'Download CV'}

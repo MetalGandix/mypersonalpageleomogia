@@ -17,6 +17,18 @@ export default function Pubblicazioni({ lang }) {
             4-6 giugno, Università di Camerino, Italia<br />
             <a href="https://files.spazioweb.it/ca/e2/cae2d341-22f1-4545-8c56-74fe28e72bad.pdf" target="_blank" rel="noopener noreferrer" style={{color:'#4f8cff', fontWeight:'500'}}>Book of Abstract Link</a>
           </>
+        },
+        {
+          title: 'Unpacking Gender Bias in AI STEM Education: A Pilot Study on Student Perceptions of MetaHuman Tutors in University Physics',
+          content: <>
+            <a href="https://www.iris.unina.it/retrieve/dff31a2a-c587-4330-b1ff-6d67d676bbc2/BOA_HELMETO_2025_con_ISBN_compressed.pdf#page=226" target="_blank" rel="noopener noreferrer" style={{color:'#4f8cff', fontWeight:'500'}}>Link al documento (pagina 226)</a>
+          </>
+        },
+        {
+          title: 'CodeTutor: personalized programming learning through automated feedback and clustering',
+          content: <>
+            <a href="https://www.researchgate.net/publication/396855126_CodeTutor_personalized_programming_learning_through_automated_feedback_and_clustering" target="_blank" rel="noopener noreferrer" style={{color:'#4f8cff', fontWeight:'500'}}>Link</a>
+          </>
         }
       ]
     : [
@@ -33,6 +45,18 @@ export default function Pubblicazioni({ lang }) {
             Machine Learning Methods for Complex and Quantum Systems - ML2025<br />
             June 4-6, University of Camerino, Italy<br />
             <a href="https://files.spazioweb.it/ca/e2/cae2d341-22f1-4545-8c56-74fe28e72bad.pdf" target="_blank" rel="noopener noreferrer" style={{color:'#4f8cff', fontWeight:'500'}}>Book of Abstract Link</a>
+          </>
+        },
+        {
+          title: 'Unpacking Gender Bias in AI STEM Education: A Pilot Study on Student Perceptions of MetaHuman Tutors in University Physics',
+          content: <>
+            <a href="https://www.iris.unina.it/retrieve/dff31a2a-c587-4330-b1ff-6d67d676bbc2/BOA_HELMETO_2025_con_ISBN_compressed.pdf#page=226" target="_blank" rel="noopener noreferrer" style={{color:'#4f8cff', fontWeight:'500'}}>Link to document (page 226)</a>
+          </>
+        },
+        {
+          title: 'CodeTutor: personalized programming learning through automated feedback and clustering',
+          content: <>
+            <a href="https://www.researchgate.net/publication/396855126_CodeTutor_personalized_programming_learning_through_automated_feedback_and_clustering" target="_blank" rel="noopener noreferrer" style={{color:'#4f8cff', fontWeight:'500'}}>Link</a>
           </>
         }
       ];

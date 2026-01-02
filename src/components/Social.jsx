@@ -48,6 +48,15 @@ export default function Social({ lang }) {
           </a>
         </li>
         <li>
+          <a href="https://scholar.google.com/citations?hl=it&authuser=2&user=lzU_hFYAAAAJ" target="_blank" rel="noopener noreferrer">
+            <span style={{verticalAlign: 'middle', marginRight: '8px'}}>
+              {/* Google Scholar SVG (mortarboard) */}
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 8l10-4 10 4-10 4L2 8z" fill="#4285F4"/><path d="M12 12v6" stroke="#34A853" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M6 18c1.5 1 3.5 2 6 2s4.5-1 6-2" stroke="#FBBC05" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </span>
+            Google Scholar
+          </a>
+        </li>
+        <li>
           <a href="https://www.ssbwiki.com/Smasher:GANDIX" target="_blank" rel="noopener noreferrer">
             <span style={{verticalAlign: 'middle', marginRight: '8px', display: 'inline-flex', alignItems: 'center'}}>
               <img src="/immagini/Smash_Ball.png" alt="Smash Ball" style={{width: '22px', height: '22px', marginLeft: '2px'}} />

@@ -1,25 +1,20 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Curriculum Vitae - Leonardo Mogianesi</title>
-    <!-- Stile Material-Like -->
     <style>
-        /* Palette di colori ispirata al Material Design */
         :root {
             --primary-color: #3f51b5;
-            /* Indigo */
             --primary-dark: #303f9f;
             --secondary-color: #f50057;
-            /* Pink A400 */
             --text-color: #333;
             --background-color: #f5f5f5;
             --card-background: #ffffff;
         }
 
-        /* Reset di base */
         * {
             margin: 0;
             padding: 0;
@@ -35,7 +30,6 @@
             padding: 0;
         }
 
-        /* Contenitore principale */
         .container {
             max-width: 900px;
             margin: 40px auto;
@@ -45,7 +39,6 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Header in stile "app-bar" */
         .app-bar {
             background-color: var(--primary-color);
             color: #fff;
@@ -60,7 +53,6 @@
             font-weight: 400;
         }
 
-        /* Sezione del profilo utente */
         .header {
             display: flex;
             align-items: center;
@@ -86,7 +78,6 @@
             margin-bottom: 4px;
         }
 
-        /* Sezioni del curriculum */
         .section {
             margin-bottom: 20px;
         }
@@ -99,39 +90,7 @@
             margin-bottom: 10px;
         }
 
-        /* Formattazione esperienza lavorativa */
-        .job-entry {
-            line-height: normal;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .job-dates {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .job-title {
-            color: var(--primary-color);
-            font-size: 1.2em;
-            margin-bottom: 5px;
-        }
-
-        .job-description {
-            font-style: italic;
-            margin-bottom: 5px;
-        }
-
-        .job-location {
-            margin-left: 10px;
-        }
-
-        .job-location p {
-            margin: 2px 0;
-        }
-
-        /* Formattazione Istruzione e Formazione */
+        .job-entry,
         .edu-entry {
             line-height: normal;
             margin-bottom: 20px;
@@ -139,33 +98,28 @@
             border-bottom: 1px solid #ddd;
         }
 
+        .job-dates,
         .edu-dates {
             font-weight: bold;
             margin-bottom: 5px;
         }
 
+        .job-title,
         .edu-title {
             color: var(--primary-color);
             font-size: 1.2em;
             margin-bottom: 5px;
         }
 
+        .job-description,
         .edu-description {
             font-style: italic;
             margin-bottom: 5px;
         }
 
-        .edu-institution {
-            margin-left: 10px;
-            margin-bottom: 5px;
-        }
-
+        .job-location,
         .edu-location {
             margin-left: 10px;
-        }
-
-        .edu-location p {
-            margin: 2px 0;
         }
 
         .skills {
@@ -182,214 +136,253 @@
             font-size: 0.9em;
         }
 
-        .activity-block {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            font-size: 0.95em;
-        }
-
-        .activity-block a {
+        a {
             color: var(--primary-color);
             text-decoration: none;
         }
 
-        .activity-block a:hover {
+        a:hover {
             text-decoration: underline;
-        }
-
-        .paper-list {
-            list-style: none;
-            padding-left: 15px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .paper-list li {
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 5px 8px;
-            border-radius: 4px;
-            font-size: 0.9em;
         }
     </style>
 </head>
 
 <body>
-
     <div class="container">
-        <!-- Sezione Profilo -->
+
         <div class="header">
-            <img src="1_less.jpg" alt="Foto di Leonardo Mogianesi">
+            <img src="1_less.jpg" alt="Photo of Leonardo Mogianesi">
             <div class="header-info">
                 <h2>Leonardo Mogianesi</h2>
-                <p><strong>Data di nascita:</strong> 28/12/1997 | <strong>Nazionalità:</strong> Italiana</p>
-                <p><strong>Abitazione:</strong> 🏠 62100, Macerata, Italia</p>
-                <p><strong>Email:</strong> 📧 leonardo.mogianesi@unicam.it | <strong>Telefono:</strong> 📞 (+39)
-                    3663467422</p> | <strong>Orcid:</strong> 0009-0009-6414-3602 | <strong>Profilo OpenBadge:</strong>
-                <a href="https://openbadgepassport.com/app/profile/253517" target="_blank">Profilo Leonardo
-                    Mogianesi</a>
+                <p><strong>Date of Birth:</strong> 28/12/1997 | <strong>Nationality:</strong> Italian</p>
+                <p><strong>Address:</strong> 62100, Macerata, Italy</p>
+                <p><strong>Email:</strong> leonardo.mogianesi@unicam.it | <strong>Phone:</strong> (+39) 3663467422</p>
+                <p>
+                    <strong>Orcid:</strong> 0009-0009-6414-3602 |
+                    <strong>OpenBadge Profile:</strong>
+                    <a href="https://openbadgepassport.com/app/profile/253517" target="_blank">Leonardo Mogianesi
+                        Profile</a> |
+                    <strong>Google Scholar:</strong>
+                    <a href="https://scholar.google.com/citations?user=lzU_hFYAAAAJ&hl=it&authuser=2" target="_blank"
+                        style="text-decoration: none; color: var(--primary-color); font-weight: bold;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg"
+                            alt="Google Scholar"
+                            style="width:16px; height:16px; vertical-align:middle; margin-right:4px;">
+                        Profile
+                    </a> |
+                    <strong>ResearchGate:</strong>
+                    <a href="https://www.researchgate.net/profile/Leonardo-Mogianesi-2?ev=hdr_xprf" target="_blank"
+                        style="text-decoration: none; color: var(--primary-color); font-weight: bold;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/ResearchGate_icon_SVG.svg"
+                            alt="ResearchGate"
+                            style="width:16px; height:16px; vertical-align:middle; margin-right:4px;">
+                        Profile
+                    </a>
+                </p>
+            </div>
+
+
+        </div>
+
+        <!-- Short professional summary -->
+        <div class="section">
+            <p>
+                PhD candidate in Learning Sciences and Digital Technologies (LESDIT) at the University of Modena and
+                Reggio Emilia. My research focuses on developing AI-based virtual tutors within immersive learning
+                environments to support students in STEM education through intelligent assistance and adaptive feedback.
+                In my studies, I use virtual learning spaces, machine learning, and speech-driven interaction to explore
+                new forms of intelligent and interactive education.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>Education and Training</h3>
+
+            <div class="edu-entry">
+                <div class="edu-dates">11/01/2023 – Present</div>
+                <div class="edu-title">PhD in LESDIT</div>
+                <div class="edu-description">(Learning Sciences and Digital Technologies)</div>
+                <div class="edu-institution">Unimore - University of Modena and Reggio Emilia</div>
+                <div class="edu-location">
+                    <p>City: Modena</p>
+                    <p>Country: Italy</p>
+                    <p>Website: <a href="https://learning.phdlesdit.eu/" target="_blank">learning.phdlesdit.eu</a></p>
+                </div>
+            </div>
+
+            <div class="edu-entry">
+                <div class="edu-dates">10/30/2020 – 01/30/2023</div>
+                <div class="edu-title">Master’s Degree in Computer Science (Grade: 106/110)</div>
+                <div class="edu-description">Thesis: A management software for an innovative blockchain-based laundry
+                </div>
+                <div class="edu-institution">Unicam - <a href="https://www.unicam.it/" target="_blank">unicam.it</a>
+                </div>
+                <div class="edu-location">
+                    <p>City: Camerino</p>
+                    <p>Country: Italy</p>
+                </div>
             </div>
         </div>
 
-        <!-- Esperienza Lavorativa -->
         <div class="section">
-            <h3>Esperienza Lavorativa</h3>
+            <h3>Research Projects and Publications</h3>
+            <div class="job-location">
+                <p><strong>Educational Escape Room on Unreal Engine</strong><br>
+                    Development of a serious game featuring an AI tutor to solve physics-based puzzles.</p>
+                <p><strong>CodeTutor</strong><br>
+                    Intelligent tutoring system for learning programming, with automated code analysis support.</p>
+                <p><strong>Animated Tutor with Lip Sync in Unreal Engine 5</strong><br>
+                    Creation of a virtual tutor capable of realistic lip synchronization with speech.</p>
+            </div>
+
+            <br>
+            <h4>Teaching and Academic Activities</h4>
+            <div class="job-location">
+                <p><strong>Teaching Assistant in Computer Science</strong> – Preparation of educational materials and
+                    assistance during labs at the University of Camerino.</p>
+                <p><strong>Moodle and e-learning Management</strong> – Maintenance and updates of the university’s
+                    e-learning systems.</p>
+                <p><strong>Exam Support</strong> – Assistance during online examination sessions.</p>
+                <p><strong>Participation in LESDIT PhD Lectures</strong> – Focus on Learning Sciences and Digital
+                    Technologies.</p>
+            </div>
+
+            <br>
+            <h4>Conferences and Seminars</h4>
+            <div class="job-location">
+                <p><strong>Summer School LESDIT-SIREM 2024</strong><br>
+                    “Social Media Literacy: From the Individual to the Community”</p>
+                <p><strong>ISYDE 2024 Conference</strong><br>
+                    June – Presentation of two scientific contributions.</p>
+                <p><strong>HELMeTO 2025 – Naples</strong><br>
+                    Abstract presentation.</p>
+                <p><strong>MetroXRAINE 2025</strong><br>
+                    Poster, abstract, and forthcoming publication.</p>
+            </div>
+
+            <br>
+            <div class="job-location">
+                <h4>Published Abstracts</h4>
+                <p>
+                    ISYDE (ID: 111, p.27), (ID: 125, p.65) –
+                    <a href="https://www.isyde.org/wp-content/uploads/2024/07/Book_OF_Abstracts_Isyde_2024.pdf"
+                        target="_blank">
+                        Book of Abstracts
+                    </a>
+                </p>
+                <p>
+                    HELMeTO 2025 – p.209 –
+                    <a href="https://www.helmeto.it/wp-content/uploads/2025/09/BOA_HELMETO_2025_con_ISBN.pdf"
+                        target="_blank">
+                        Book of Abstracts
+                    </a>
+                </p>
+                <p>
+                    MetroXRAINE 2025 – Abstract + publication (forthcoming) –
+                    <a href="https://metroxraine.org/" target="_blank">
+                        Conference Website
+                    </a>
+                </p>
+                
+                <br>
+                <h4>Published Articles</h4>
+                <p>
+                    CodeTutor: personalized programming learning through automated feedback and clustering –
+                    <a href="https://www.researchgate.net/publication/396855126_CodeTutor_personalized_programming_learning_through_automated_feedback_and_clustering"
+                        target="_blank">ResearchGate Link</a> 
+                    ISYDE 2024 Conference Publication, <em>Book of Proceedings ISYDE</em>, pp. 388–454 –
+                    <a href="https://it.pearson.com/content/dam/region-core/italy/pearson-italy/pdf/Docenti/Universit%C3%A0/Proceedings-ISYDE2024.pdf"
+                        target="_blank">Book of Proceedings</a>
+                </p>
+                
+                </div>
+
+
+        </div>
+
+        <div class="section">
+            <h3>Work Experience</h3>
 
             <div class="job-entry">
-                <div class="job-dates">01/05/2023 – 01/11/2023</div>
-                <div class="job-title">Borsa di studio</div>
-                <div class="job-description">Innovazione digitale e sviluppo di servizi online per la didattica
-                    universitaria presso Unicam</div>
+                <div class="job-dates">03/01/2025 - 06/01/2025</div>
+                <div class="job-title">University Lecturer</div>
+                <div class="job-description">Teaching the course “Information Processing Systems” (20 hours)</div>
                 <div class="job-location">
-                    <p>Città: Camerino</p>
-                    <p>Paese: Italia</p>
+                    <p>Institution: University of Camerino</p>
+                    <p>Country: Italy</p>
                 </div>
             </div>
 
-
             <div class="job-entry">
-                <div class="job-dates">04/10/2022 – 23/12/2022</div>
-                <div class="job-title">Docente di Informatica</div>
-                <div class="job-description">Docente di Informatica presso ITIS DIVINI</div>
+                <div class="job-dates">10/01/2025 - 11/01/2025</div>
+                <div class="job-title">Corporate Trainer</div>
+                <div class="job-description">Course “Using AI at Work” (12 hours) for company staff</div>
                 <div class="job-location">
-                    <p>Città: San Severino Marche</p>
-                    <p>Paese: Italia</p>
-                </div>
-            </div>
-
-
-            <div class="job-entry">
-                <div class="job-dates">26/04/2022 – 16/06/2022</div>
-                <div class="job-title">Docente di Informatica</div>
-                <div class="job-description">Docente di Informatica presso IIS Garibaldi</div>
-                <div class="job-location">
-                    <p>Città: Macerata</p>
-                    <p>Paese: Italia</p>
+                    <p>City: Tolentino</p>
+                    <p>Country: Italy</p>
                 </div>
             </div>
 
             <div class="job-entry">
-                <div class="job-dates">15/03/2021 – 15/06/2021</div>
+                <div class="job-dates">05/01/2023 – 11/01/2023</div>
+                <div class="job-title">Research Fellow</div>
+                <div class="job-description">Digital innovation and development of online educational services at
+                    Unicam</div>
+                <div class="job-location">
+                    <p>City: Camerino</p>
+                    <p>Country: Italy</p>
+                </div>
+            </div>
+
+            <div class="job-entry">
+                <div class="job-dates">10/04/2022 – 12/23/2022</div>
+                <div class="job-title">Computer Science Teacher</div>
+                <div class="job-description">Teaching at ITIS DIVINI</div>
+                <div class="job-location">
+                    <p>City: San Severino Marche</p>
+                    <p>Country: Italy</p>
+                </div>
+            </div>
+
+            <div class="job-entry">
+                <div class="job-dates">04/26/2022 – 06/16/2022</div>
+                <div class="job-title">Computer Science Teacher</div>
+                <div class="job-description">Teaching at IIS Garibaldi</div>
+                <div class="job-location">
+                    <p>City: Macerata</p>
+                    <p>Country: Italy</p>
+                </div>
+            </div>
+
+            <div class="job-entry">
+                <div class="job-dates">03/15/2021 – 06/15/2021</div>
                 <div class="job-title">Application Developer</div>
-                <div class="job-description">Application Developer presso DevQ S.R.L. (Front-end con Angular)</div>
+                <div class="job-description">Frontend developer (Angular) at DevQ S.R.L.</div>
                 <div class="job-location">
-                    <p>Città: Macerata</p>
-                    <p>Paese: Italia</p>
+                    <p>City: Macerata</p>
+                    <p>Country: Italy</p>
                 </div>
             </div>
 
             <div class="job-entry">
                 <div class="job-dates">2019 – 2020</div>
                 <div class="job-title">Web Developer</div>
-                <div class="job-description">Web Developer presso Task S.R.L.</div>
+                <div class="job-description">Web Developer at Task S.R.L.</div>
                 <div class="job-location">
-                    <p>Città: Macerata</p>
-                    <p>Paese: Italia</p>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Istruzione e Formazione -->
-        <div class="section">
-            <h3>Istruzione e Formazione</h3>
-
-            <div class="edu-entry">
-                <div class="edu-dates">01/11/2023 – Attuale</div>
-                <div class="edu-title">Dottorato di ricerca in LESDIT</div>
-                <div class="edu-description">(Learning Sciences and Digital Technology)</div>
-                <div class="edu-institution">Unimore - Università degli studi di Modena e Reggio Emilia</div>
-                <div class="edu-location">
-                    <p>Città: Modena</p>
-                    <p>Paese: Italia</p>
-                    <p>Sito: <a href="https://learning.phdlesdit.eu/" target="_blank">https://learning.phdlesdit.eu/</a>
-                    </p>
-                </div>
-            </div>
-
-            <div class="edu-entry">
-                <div class="edu-dates">30/10/2020 – 30/01/2023</div>
-                <div class="edu-title">Laurea Magistrale in Computer Science, Unicam (Voto: 106)</div>
-                <div class="edu-description">Tesi: A management software for an innovative blockchain-based laundry
-                </div>
-                <div class="edu-institution">Unicam - <a href="https://www.unicam.it/"
-                        target="_blank">https://www.unicam.it/</a></div>
-                <div class="edu-location">
-                    <p>Città: Camerino</p>
-                    <p>Paese: Italia</p>
+                    <p>City: Macerata</p>
+                    <p>Country: Italy</p>
                 </div>
             </div>
         </div>
 
-        <!-- Attività, Pubblicazioni e Ricerca -->
         <div class="section">
-            <h3>Attività, Pubblicazioni e Ricerca</h3>
-
-            <!-- Progetti di Ricerca -->
-            <div class="research-block">
-                <h4>Progetti di Ricerca Principali</h4>
-                <div class="job-location">
-                <p><strong>Escape Room educativa su Unreal Engine</strong><br>
-                    Sviluppo di un serious game con l’uso di un tutor AI per risolvere puzzle basati sulla fisica.</p>
-                <p><strong>CodeTutor</strong><br>
-                    Sistema di tutoraggio per l’apprendimento della programmazione, con supporto all’analisi automatica
-                    del codice.</p>
-                <p><strong>Tutor animato con sincronizzazione labiale (Lip Sync) in Unreal Engine 5</strong><br>
-                    Creazione di un tutor virtuale in grado di sincronizzare i movimenti delle labbra con l’audio.</p>
-                </div>
-            </div>
-
-            <!-- Attività Didattiche e Formative -->
-            <br>
-            <div class="teaching-block">
-                <h4>Attività Didattiche e Formative</h4>
-                <div class="job-location">
-                <p><strong>Assistenza al professore di Informatica</strong> – Preparazione di materiali didattici e
-                    supporto durante le esercitazioni presso l'Università di Camerino.</p>
-                <p><strong>Gestione Moodle e piattaforme e-learning</strong> – Manutenzione e aggiornamento dei sistemi
-                    di e-learning dell’Università di Camerino.</p>
-                <p><strong>Supporto durante gli esami</strong> – Affiancamento ai professori per facilitare il processo
-                    di valutazione.</p>
-                <p><strong>Partecipazione a lezioni LESDIT</strong> – Approfondimento su Learning Sciences e Digital
-                    Technologies.</p>
-                </div>
-            </div>
-<br>
-            <!-- Conferenze e Seminari -->
-            <div class="conference-block">
-                <h4>Conferenze e Seminari</h4>
-                <div class="job-location">
-                    <p><strong>Summer School LESDIT-SIREM 2024</strong><br>
-                        “Social Media Literacy: From the Individual to the Community”</p>
-                    <p><strong>Convegno ISYDE 2024</strong><br>
-                        Giugno – Presentazione di due contributi scientifici.</p>
-                </div>
-                
-            </div>
-<br>
-            <!-- Pubblicazioni -->
-            <div class="publication-block">
-                <p><strong>Abstract pubblicati:</strong></p>
-                <div class="job-location">
-                <p>Isyde (ID: 111, pag 27), (ID: 125, pag 65) –
-                    <a href="https://www.isyde.org/wp-content/uploads/2024/07/Book_OF_Abstracts_Isyde_2024.pdf"
-                        target="_blank">Book of Abstract Link</a>
-                </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Competenze Linguistiche -->
-        <div class="section">
-            <h3>Competenze Linguistiche</h3>
-            <p><strong>Lingua madre:</strong> Italiano</p>
-            <p><strong>Inglese:</strong> B2 (Ascolto, Lettura, Scrittura, Produzione Orale, Interazione Orale)</p>
+            <h3>Language Skills</h3>
+            <p><strong>Native Language:</strong> Italian</p>
+            <p><strong>English:</strong> B2 (Listening, Reading, Writing, Speaking)</p>
         </div>
 
         <div class="section">
-            <h3>Competenze Digitali</h3>
+            <h3>Digital Skills</h3>
             <div class="skills">
                 <span class="skill">Microsoft Office</span>
                 <span class="skill">HTML, CSS, PHP, jQuery, JavaScript</span>
@@ -406,10 +399,9 @@
             </div>
         </div>
 
-        <!-- Patente di Guida -->
         <div class="section">
-            <h3>Patente di Guida</h3>
-            <p>B (Automobile)</p>
+            <h3>Driving License</h3>
+            <p>Category B (Car)</p>
         </div>
 
     </div>

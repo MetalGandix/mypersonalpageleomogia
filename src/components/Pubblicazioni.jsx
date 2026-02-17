@@ -1,76 +1,65 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 
 export default function Pubblicazioni({ lang }) {
-  const pubs = lang === 'it'
-    ? [
-        {
-          title: 'Abstract Isyde 2024',
-          content: <>
-            Abstract pubblicati: (ID: 111, pag 27), (ID: 125, pag 65)<br />
-            <a href="https://www.isyde.org/wp-content/uploads/2024/07/Book_OF_Abstracts_Isyde_2024.pdf" target="_blank" rel="noopener noreferrer" style={{color:'#4f8cff', fontWeight:'500'}}>Book of Abstract Link</a>
-          </>
-        },
-        {
-          title: 'Poster ML2025',
-          content: <>
-            Machine Learning Methods for Complex and Quantum Systems - ML2025<br />
-            4-6 giugno, Università di Camerino, Italia<br />
-            <a href="https://files.spazioweb.it/ca/e2/cae2d341-22f1-4545-8c56-74fe28e72bad.pdf" target="_blank" rel="noopener noreferrer" style={{color:'#4f8cff', fontWeight:'500'}}>Book of Abstract Link</a>
-          </>
-        },
-        {
-          title: 'Unpacking Gender Bias in AI STEM Education: A Pilot Study on Student Perceptions of MetaHuman Tutors in University Physics',
-          content: <>
-            <a href="https://www.iris.unina.it/retrieve/dff31a2a-c587-4330-b1ff-6d67d676bbc2/BOA_HELMETO_2025_con_ISBN_compressed.pdf#page=226" target="_blank" rel="noopener noreferrer" style={{color:'#4f8cff', fontWeight:'500'}}>Link al documento (pagina 226)</a>
-          </>
-        },
-        {
-          title: 'CodeTutor: personalized programming learning through automated feedback and clustering',
-          content: <>
-            <a href="https://www.researchgate.net/publication/396855126_CodeTutor_personalized_programming_learning_through_automated_feedback_and_clustering" target="_blank" rel="noopener noreferrer" style={{color:'#4f8cff', fontWeight:'500'}}>Link</a>
-          </>
-        }
-      ]
-    : [
-        {
-          title: 'Abstract Isyde 2024',
-          content: <>
-            Abstract published: (ID: 111, p. 27), (ID: 125, p. 65)<br />
-            <a href="https://www.isyde.org/wp-content/uploads/2024/07/Book_OF_Abstracts_Isyde_2024.pdf" target="_blank" rel="noopener noreferrer" style={{color:'#4f8cff', fontWeight:'500'}}>Book of Abstract Link</a>
-          </>
-        },
-        {
-          title: 'Poster ML2025',
-          content: <>
-            Machine Learning Methods for Complex and Quantum Systems - ML2025<br />
-            June 4-6, University of Camerino, Italy<br />
-            <a href="https://files.spazioweb.it/ca/e2/cae2d341-22f1-4545-8c56-74fe28e72bad.pdf" target="_blank" rel="noopener noreferrer" style={{color:'#4f8cff', fontWeight:'500'}}>Book of Abstract Link</a>
-          </>
-        },
-        {
-          title: 'Unpacking Gender Bias in AI STEM Education: A Pilot Study on Student Perceptions of MetaHuman Tutors in University Physics',
-          content: <>
-            <a href="https://www.iris.unina.it/retrieve/dff31a2a-c587-4330-b1ff-6d67d676bbc2/BOA_HELMETO_2025_con_ISBN_compressed.pdf#page=226" target="_blank" rel="noopener noreferrer" style={{color:'#4f8cff', fontWeight:'500'}}>Link to document (page 226)</a>
-          </>
-        },
-        {
-          title: 'CodeTutor: personalized programming learning through automated feedback and clustering',
-          content: <>
-            <a href="https://www.researchgate.net/publication/396855126_CodeTutor_personalized_programming_learning_through_automated_feedback_and_clustering" target="_blank" rel="noopener noreferrer" style={{color:'#4f8cff', fontWeight:'500'}}>Link</a>
-          </>
-        }
-      ];
+  const [publications, setPublications] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("/publications.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setPublications(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Errore caricamento pubblicazioni:", err);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <>
-      <h2 style={{textAlign:'center'}}>{lang === 'it' ? 'Pubblicazioni' : 'Publications'}</h2>
-      <div className="card-container">
-        {pubs.map((pub, idx) => (
-          <div className="card" key={idx}>
-            <div className="card__title">{pub.title}</div>
-            <div className="card__content">{pub.content}</div>
-          </div>
-        ))}
-      </div>
+      <h2 style={{ textAlign: "center" }}>
+        {lang === "it" ? "Pubblicazioni" : "Publications"}
+      </h2>
+
+      {loading ? (
+        <p style={{ textAlign: "center" }}>
+          {lang === "it" ? "Caricamento..." : "Loading..."}
+        </p>
+      ) : (
+        <div className="card-container">
+          {publications.map((pub, idx) => (
+            <div className="card" key={idx}>
+              <div className="card__title">{pub.title}</div>
+
+              <div className="card__content">
+                <div>{pub.authors}</div>
+
+                <div>
+                  {pub.year}
+                </div>
+
+                <div>
+                  {lang === "it" ? "Citazioni" : "Citations"}:{" "}
+                  {pub.citations ?? 0}
+                </div>
+
+                <a
+                  href={pub.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#4f8cff", fontWeight: "500" }}
+                >
+                  {lang === "it"
+                    ? "Vai alla pubblicazione"
+                    : "View publication"}
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </>
   );
 }

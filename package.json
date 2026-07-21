@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "update:publications": "python generateScholar.py",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",

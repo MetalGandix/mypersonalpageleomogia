@@ -65,17 +65,6 @@ export default function Passioni({ lang }) {
     setCarouselIdx(0);
   };
 
-  const nextImg = () => {
-    if (selected !== null && passioni[selected].immagini) {
-      setCarouselIdx((carouselIdx + 1) % passioni[selected].immagini.length);
-    }
-  };
-  const prevImg = () => {
-    if (selected !== null && passioni[selected].immagini) {
-      setCarouselIdx((carouselIdx - 1 + passioni[selected].immagini.length) % passioni[selected].immagini.length);
-    }
-  };
-
   return (
     <>
       <h2>{lang === 'it' ? 'Passioni' : 'Passions'}</h2>
@@ -93,7 +82,7 @@ export default function Passioni({ lang }) {
             <div style={{marginBottom: '1.2rem'}}>{lang === 'it' ? passioni[selected].info : passioni[selected].infoEn}</div>
             <button className="close-info" onClick={() => setSelected(null)}>{lang === 'it' ? 'Chiudi' : 'Close'}</button>
           </div>
-          <div className="passione-info-slider">
+          <div className={`passione-info-slider ${passioni[selected].immagini.length > 1 ? 'is-carousel' : 'is-single'}`}>
             {passioni[selected].immagini && (
               <div
                 style={{
@@ -126,7 +115,7 @@ export default function Passioni({ lang }) {
                       </React.Fragment>
                     ))}
                   </div>
-                  <ul className="slider-list" style={{width: '400px', height: '400px', margin: '0 auto', display: 'block', maxWidth: '98vw'}}>
+                  <ul className="slider-list passion-slider-list">
                     {passioni[selected].immagini.map((img, idx) => (
                       <li
                         key={img}

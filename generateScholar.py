@@ -1,43 +1,77 @@
-import requests
+"""Aggiorna public/publications.json dal profilo pubblico Google Scholar."""
+
+import html
 import json
-import os
+import re
+from pathlib import Path
 
-API_KEY = "801f7c64a27443cc5bc4adc2c55e8b6812347f404d1dd4b1ccf7ddd3b5c487ec"
-AUTHOR_ID = "lzU_hFYAAAAJ"
+import requests
 
-URL = "https://serpapi.com/search"
 
-params = {
-    "engine": "google_scholar_author",
-    "author_id": AUTHOR_ID,
-    "hl": "it",
-    "num": 100,
-    "api_key": API_KEY
+SCHOLAR_URL = "https://scholar.google.com/citations?user=lzU_hFYAAAAJ&hl=it&pagesize=100"
+OUTPUT = Path(__file__).parent / "public" / "publications.json"
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"
+    )
 }
 
-response = requests.get(URL, params=params)
-data = response.json()
 
-if data.get("search_metadata", {}).get("status") != "Success":
-    print("Errore API:", data.get("search_metadata"))
-    exit()
+def text_content(fragment):
+    """Converte un piccolo frammento HTML Scholar in testo leggibile."""
+    return html.unescape(re.sub(r"<[^>]+>", "", fragment)).strip()
 
-articles = data.get("articles", [])
 
-publications = []
+def extract_publications(page):
+    rows = re.findall(
+        r'<tr[^>]*class=["\'][^"\']*\bgsc_a_tr\b[^"\']*["\'][^>]*>(.*?)</tr>',
+        page,
+        flags=re.DOTALL,
+    )
+    publications = []
 
-for a in articles:
-    publications.append({
-        "title": a.get("title"),
-        "authors": a.get("authors"),
-        "year": a.get("year"),
-        "citations": a.get("cited_by", {}).get("value", 0),
-        "link": a.get("link")
-    })
+    for row in rows:
+        title_match = re.search(
+            r'<a[^>]*class=["\']gsc_a_at["\'][^>]*>(.*?)</a>', row, flags=re.DOTALL
+        )
+        details = re.findall(r'<div[^>]*class=["\']gs_gray["\'][^>]*>(.*?)</div>', row, flags=re.DOTALL)
+        year_match = re.search(r'<span[^>]*class=["\'][^"\']*gsc_a_hc[^"\']*["\'][^>]*>(.*?)</span>', row)
+        citations_match = re.search(r'class=["\'][^"\']*gsc_a_ac[^"\']*["\'][^>]*>(\d*)</a>', row)
 
-os.makedirs("public", exist_ok=True)
+        if not title_match:
+            continue
 
-with open("public/publications.json", "w", encoding="utf-8") as f:
-    json.dump(publications, f, indent=2, ensure_ascii=False)
+        publications.append(
+            {
+                "title": text_content(title_match.group(1)),
+                "authors": text_content(details[0]) if details else "",
+                "year": text_content(year_match.group(1)) if year_match else "",
+                "citations": int(citations_match.group(1)) if citations_match and citations_match.group(1) else 0,
+                "link": "https://scholar.google.com" + html.unescape(
+                    re.search(r'href=["\']([^"\']+)', title_match.group(0)).group(1)
+                ),
+            }
+        )
 
-print("publications.json aggiornato con successo.")
+    return publications
+
+
+def main():
+    response = requests.get(SCHOLAR_URL, headers=HEADERS, timeout=20)
+    response.raise_for_status()
+    publications = extract_publications(response.text)
+
+    if not publications:
+        raise RuntimeError("Google Scholar non ha restituito pubblicazioni leggibili.")
+
+    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT.write_text(
+        json.dumps(publications, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+    print(f"Aggiornate {len(publications)} pubblicazioni da {SCHOLAR_URL}")
+
+
+if __name__ == "__main__":
+    main()
